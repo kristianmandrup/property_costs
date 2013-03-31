@@ -13,8 +13,21 @@ Gem::Specification.new do |s|
   s.summary     = "Property Costs."
   s.description = "One-time and Monthly costs"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["LICENSE", "Rakefile", "README.md"]
 
-  # s.add_dependency "rails", "~> 3.2.11"
-  # s.add_dependency "jquery-rails"
+  s.add_dependency 'rails',         '>= 3.2'
+
+  s.add_dependency 'mongoid',       '>= 3.1'
+
+  # TODO: use money-rails!!!
+  s.add_dependency 'money-mongoid', '>= 0.2.2'
+
+  s.add_dependency 'sugar-high',    '~> 0.7.3'
+
+  s.add_dependency 'hashie',        '>= 2.0'
+  s.add_dependency 'concerned',     '>= 0.1.5'
+
+  s.add_development_dependency 'rspec-rails', '>= 2.12'
+  s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'database_cleaner'
 end
