@@ -10,17 +10,21 @@ class Property
 
       embedded_in :costs, class_name: 'Property::Costs', inverse_of: :monthly
 
-      validates :rent, :numericality => {:only_integer => true, :greater_than => 0}
+      validates :rent, :presence => false, :numericality => {:only_integer => true, :greater_than_or_equal => 0}
 
       include_concern :base, from: 'Property::Costs'
+
+      after_initialize do
+        self.rent = 0 unless self.rent
+      end
 
       before_save do
         sync_costs if changed?
       end
 
       def total
-        unless rent && rent > 0
-          raise NoRentDefinedError, "To calculate the monthly total the rent must be set > 0"
+        unless rent && rent >= 0
+          raise NoRentDefinedError, "To calculate the monthly total the rent must be set >= 0"
         end
         super
       end

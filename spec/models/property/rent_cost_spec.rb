@@ -14,7 +14,7 @@ describe Property::RentCost do
 
   context 'default' do
 
-    let(:property) { create :property }
+    let(:property) { create :property, cost: 0 }
 
     let(:costs)    { property.costs }
     let(:one_time) { property.costs.one_time }
@@ -25,7 +25,7 @@ describe Property::RentCost do
     # end
 
     it 'should have rent > 0' do
-      expect(subject.rent).to be > 0
+      expect(subject.rent).to be >= 0
     end
 
     it 'should be valid with rent > 0' do

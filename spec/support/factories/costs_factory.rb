@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :costs, class: 'Property::Costs' do 
     after :build do |costs|
-      FactoryGirl.create :monthly_costs, rent: 1, costs: costs
+      FactoryGirl.create :monthly_costs, rent: 0, costs: costs
     end
   
     trait :valid do

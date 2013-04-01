@@ -28,6 +28,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'concerned',     '>= 0.1.5'
 
   s.add_development_dependency 'rspec-rails', '>= 2.12'
-  s.add_development_dependency 'factory_girl'
-  s.add_development_dependency 'database_cleaner'
 end

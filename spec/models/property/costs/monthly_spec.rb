@@ -22,8 +22,8 @@ describe Property::Costs::Monthly do
       expect(subject.rent).to eq 0
     end
 
-    it 'should not be valid without rent > 0' do
-      expect(subject.valid?).to_not be true
+    it 'should be valid without rent set > 0' do
+      expect(subject.valid?).to be true
     end
 
     # it 'should set total monthly costs to 0' do
@@ -69,8 +69,8 @@ describe Property::Costs::Monthly do
     let(:property)  { Property.create costs: {monthly: {rent: 0, utilities: 100 }}}
     let(:costs)     { property.costs }
 
-    it 'should not be valid without rent > 0' do
-      expect(subject.valid?).to_not be true
+    it 'should be valid without rent set > 0' do
+      expect(subject.valid?).to be true
     end
 
     it 'should calc total monthly costs as 0' do    

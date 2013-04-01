@@ -136,6 +136,7 @@ GEM
     shoulda-matchers (1.4.2)
       activesupport (>= 3.0.0)
       bourne (~> 1.1.2)
+    spork (0.9.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -156,7 +157,6 @@ DEPENDENCIES
   cutter (>= 0.8.2)
   database_cleaner (>= 0.8)
   delorean (>= 1.1)
-  factory_girl
   factory_girl_rails
   fakeweb
   ffaker (>= 1.14.1)
@@ -164,3 +164,4 @@ DEPENDENCIES
   rspec-rails
   shoulda
   shoulda-matchers
+  spork

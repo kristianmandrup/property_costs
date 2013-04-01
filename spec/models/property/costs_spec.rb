@@ -12,15 +12,15 @@ describe Property::Costs do
   end
 
   context 'property with no costs' do
-    let(:property)  { Property.create }
+    let(:property)  { create :property }
     let(:costs)     { property.costs  }
 
     it 'should have rent = 0' do
       expect(subject.rent).to eq 0
     end
 
-    it 'should not be valid without rent > 0' do
-      expect(subject.valid?).to_not be true
+    it 'should be valid without rent > 0' do
+      expect(subject.valid?).to be true
     end
 
     it 'should set total rent to 0' do
